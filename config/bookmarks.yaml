@@ -1,0 +1,41 @@
+# bookmarks.yaml
+
+- Developer:
+  - GitHub:
+    - href: https://github.com
+      icon: si-github
+      description: Code repositories
+      target: _blank
+    - href: https://github.com/trending
+      icon: si-github
+      description: Trending repositories
+      target: _blank
+
+- Documentation:
+  - MDN Web Docs:
+    - href: https://developer.mozilla.org
+      icon: mdi-book
+      description: Web development documentation
+      target: _blank
+  - Stack Overflow:
+    - href: https://stackoverflow.com
+      icon: si-stackoverflow
+      description: Programming Q&A
+      target: _blank
+
+- Social:
+  - Reddit:
+    - href: https://reddit.com
+      icon: si-reddit
+      description: Social news aggregation
+      target: _blank
+  - Twitter:
+    - href: https://twitter.com
+      icon: si-twitter
+      description: Social networking
+      target: _blank
+
+- Development:
+  - Github:
+    - abbr: GH
+      href: https://github.com/

@@ -1,0 +1,40 @@
+# Test de robustez - Mezclando widgets configurados y no configurados
+services:
+  - Test Group:
+      # Widget bien configurado
+      - Jackett Service:
+          href: http://jackett.test:9117
+          description: Indexer service
+          widget:
+            type: jackett
+            url: http://jackett.test:9117
+            username: admin
+            password: secret123
+      
+      # Widget implementado pero sin configuración completa
+      - Search Widget Test:
+          href: http://search.test
+          description: Search widget test
+          widget:
+            type: search
+            provider: google
+      
+      # Widget que podría no tener configuración
+      - Generic Service:
+          href: http://generic.test
+          description: Generic service
+          widget:
+            type: generic_widget_type
+            url: http://generic.test
+            some_param: test_value
+
+widgets:
+  - search:
+      provider: google
+      target: _blank
+
+bookmarks:
+  - Testing:
+      - Test Site:
+          href: https://example.com
+          description: Test bookmark

@@ -1,0 +1,26 @@
+# widgets.yaml
+
+- search:
+    provider: google
+    target: _blank
+
+- datetime:
+    text_size: xl
+    format:
+      timeStyle: short
+      dateStyle: long
+      hourCycle: h23
+
+- resources:
+    backend: glances
+    expanded: true
+    cpu: true
+    memory: true
+    disk: /
+
+- weather:
+    latitude: 40.7128
+    longitude: -74.0060
+    units: metric
+    provider: openweathermap
+    apiKey: your_api_key_here

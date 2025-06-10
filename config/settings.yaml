@@ -1,0 +1,68 @@
+# settings.yaml
+
+title: Enterprise Infrastructure Portal
+favicon: https://example.com/favicon.ico
+
+theme: dark
+color: gray
+headerStyle: boxed
+
+# Background configuration
+background:
+  image: https://raw.githubusercontent.com/yourusername/yourrepo/main/images/background.jpg
+  blur: none
+  saturate: 100
+  brightness: 60
+  opacity: 65
+
+# General settings
+useEqualHeights: true
+hideVersion: true
+hideErrors: true
+statusStyle: "dot"
+
+# Quicklaunch configuration
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: true
+  showSearchSuggestions: true
+  hideVisitURL: true
+
+# Layout configuration
+layout:
+  Storage & Networking:
+    header: true
+    style: row
+    columns: 4
+  Core Infrastructure:
+    header: true
+    style: row
+    columns: 3
+  Media:
+    header: true
+    style: row
+    columns: 2
+  Automatización y Productividad:
+    header: true
+    style: row
+    columns: 3
+  Seguridad y Acceso:
+    header: true
+    style: row
+    columns: 2  
+  Herramientas de IA:
+    header: true
+    style: row
+    columns: 2
+  Calendar:
+    header: true
+    style: row
+    columns: 3
+
+# Provider API keys
+providers:
+  openweathermap: your_openweather_api_key_here
+  glances: http://localhost:61208
+
+# Additional settings
+showStats: false

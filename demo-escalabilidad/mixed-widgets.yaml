@@ -1,0 +1,51 @@
+# Demostración: Mix de Widgets
+services:
+  - Production Ready:
+      # Widget BIEN configurado
+      - Jackett Production:
+          href: http://jackett.prod:9117
+          description: Production indexer
+          widget:
+            type: jackett
+            url: http://jackett.prod:9117
+            username: produser
+            password: prodpass
+
+      # Widget SIN configuración completa
+      - Future DNS Service:
+          href: http://dns.future:53
+          description: Future DNS service
+          widget:
+            type: technitium
+            url: http://dns.future:53
+            key: future-api-key
+
+  - Development:
+      # Widget que NO existe en el sistema
+      - Custom Tool:
+          href: http://custom.dev:8080
+          description: Custom development tool
+          widget:
+            type: custom_future_widget
+            url: http://custom.dev:8080
+            config:
+              advanced: true
+              experimental: yes
+
+widgets:
+  - resources:
+      cpu: true
+      memory: true
+      disk: /
+  
+  # Widget que podría no tener configuración
+  - custom_info_widget:
+      type: experimental
+      data_source: api
+
+bookmarks:
+  - Mixed:
+      - Working Link:
+          href: https://working.example.com
+      - Future Link:
+          href: https://future.example.com

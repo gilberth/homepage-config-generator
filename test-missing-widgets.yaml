@@ -1,0 +1,53 @@
+# Test configuration with missing widgets
+services:
+  - Test Services:
+      - Test Adguardhome Service:
+          href: http://test-adguardhome.local:8080
+          description: Test service for adguardhome widget
+          widget:
+            type: adguardhome
+            url: http://test-adguardhome.local:8080
+            key: test-api-key-adguardhome
+            username: testuser
+            password: testpass
+  - Test Services:
+      - Test Atsumeru Service:
+          href: http://test-atsumeru.local:8080
+          description: Test service for atsumeru widget
+          widget:
+            type: atsumeru
+            url: http://test-atsumeru.local:8080
+            key: test-api-key-atsumeru
+  - Test Services:
+      - Test Audiobookshelf Service:
+          href: http://test-audiobookshelf.local:8080
+          description: Test service for audiobookshelf widget
+          widget:
+            type: audiobookshelf
+            url: http://test-audiobookshelf.local:8080
+  - Test Services:
+      - Test Azuredevops Service:
+          href: http://test-azuredevops.local:8080
+          description: Test service for azuredevops widget
+          widget:
+            type: azuredevops
+            url: http://test-azuredevops.local:8080
+  - Test Services:
+      - Test Calibreweb Service:
+          href: http://test-calibreweb.local:8080
+          description: Test service for calibreweb widget
+          widget:
+            type: calibreweb
+            url: http://test-calibreweb.local:8080
+            key: test-api-key-calibreweb
+            username: testuser
+            password: testpass
+
+widgets:
+  - search:
+      provider: google
+
+bookmarks:
+  - Testing:
+      - Test Bookmark:
+          href: https://example.com

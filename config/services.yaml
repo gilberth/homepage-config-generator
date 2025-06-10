@@ -1,0 +1,213 @@
+# services.yaml - Enterprise Infrastructure Portal
+# Updated with comprehensive homelab and enterprise services
+
+- Storage & Networking:
+  - Proxmox VE:
+      href: https://pve.local:8006/
+      description: Virtualization Management Platform
+      icon: mdi-server
+      ping: pve.local
+      widget:
+        type: proxmox
+        url: https://pve.local:8006
+        username: "{{HOMEPAGE_VAR_PROXMOX_USERNAME}}"
+        password: "{{HOMEPAGE_VAR_PROXMOX_PASSWORD}}"
+
+  - TrueNAS Scale:
+      href: https://truenas.local/
+      description: Network Attached Storage (ZFS)
+      icon: mdi-database
+      ping: truenas.local
+      widget:
+        type: truenas
+        url: https://truenas.local
+        username: "{{HOMEPAGE_VAR_TRUENAS_USERNAME}}"
+        password: "{{HOMEPAGE_VAR_TRUENAS_PASSWORD}}"
+
+  - pfSense:
+      href: https://firewall.local/
+      description: Firewall & Router Management
+      icon: mdi-shield-check
+      ping: firewall.local
+
+  - UniFi Controller:
+      href: https://unifi.local:8443/
+      description: Network Equipment Management
+      icon: mdi-wifi
+      ping: unifi.local
+      widget:
+        type: unifi
+        url: https://unifi.local:8443
+        username: "{{HOMEPAGE_VAR_UNIFI_USERNAME}}"
+        password: "{{HOMEPAGE_VAR_UNIFI_PASSWORD}}"
+
+- Core Infrastructure:
+  - Docker Portainer:
+      href: https://portainer.local:9443/
+      description: Container Management Platform
+      icon: si-docker
+      ping: portainer.local
+      widget:
+        type: portainer
+        url: https://portainer.local:9443
+        env: 1
+        key: "{{HOMEPAGE_VAR_PORTAINER_KEY}}"
+
+  - Kubernetes Dashboard:
+      href: https://k8s.local/dashboard/
+      description: Kubernetes Cluster Management
+      icon: si-kubernetes
+      ping: k8s.local
+
+  - Grafana:
+      href: https://grafana.local:3000/
+      description: Monitoring & Analytics Platform
+      icon: si-grafana
+      ping: grafana.local
+      widget:
+        type: grafana
+        url: https://grafana.local:3000
+        username: "{{HOMEPAGE_VAR_GRAFANA_USERNAME}}"
+        password: "{{HOMEPAGE_VAR_GRAFANA_PASSWORD}}"
+
+  - Prometheus:
+      href: https://prometheus.local:9090/
+      description: Metrics Collection & Monitoring
+      icon: si-prometheus
+      ping: prometheus.local
+
+- Media & Entertainment:
+  - Plex Media Server:
+      href: https://plex.local:32400/
+      description: Media Streaming Platform
+      icon: si-plex
+      ping: plex.local
+      widget:
+        type: plex
+        url: https://plex.local:32400
+        key: "{{HOMEPAGE_VAR_PLEX_TOKEN}}"
+
+  - Jellyfin:
+      href: https://jellyfin.local:8096/
+      description: Open Source Media System
+      icon: si-jellyfin
+      ping: jellyfin.local
+      widget:
+        type: jellyfin
+        url: https://jellyfin.local:8096
+        key: "{{HOMEPAGE_VAR_JELLYFIN_TOKEN}}"
+
+  - Radarr:
+      href: https://radarr.local:7878/
+      description: Movie Collection Manager
+      icon: si-radarr
+      ping: radarr.local
+      widget:
+        type: radarr
+        url: https://radarr.local:7878
+        key: "{{HOMEPAGE_VAR_RADARR_KEY}}"
+
+  - Sonarr:
+      href: https://sonarr.local:8989/
+      description: TV Series Collection Manager
+      icon: si-sonarr
+      ping: sonarr.local
+      widget:
+        type: sonarr
+        url: https://sonarr.local:8989
+        key: "{{HOMEPAGE_VAR_SONARR_KEY}}"
+
+- Automatización y Productividad:
+  - Home Assistant:
+      href: https://homeassistant.local:8123/
+      description: Home Automation Platform
+      icon: si-homeassistant
+      ping: homeassistant.local
+      widget:
+        type: homeassistant
+        url: https://homeassistant.local:8123
+        key: "{{HOMEPAGE_VAR_HASS_TOKEN}}"
+
+  - Nextcloud:
+      href: https://nextcloud.local/
+      description: Cloud Storage & Collaboration
+      icon: si-nextcloud
+      ping: nextcloud.local
+      widget:
+        type: nextcloud
+        url: https://nextcloud.local
+        username: "{{HOMEPAGE_VAR_NEXTCLOUD_USERNAME}}"
+        password: "{{HOMEPAGE_VAR_NEXTCLOUD_PASSWORD}}"
+
+  - GitLab:
+      href: https://gitlab.local/
+      description: DevOps Lifecycle Tool
+      icon: si-gitlab
+      ping: gitlab.local
+
+  - Jenkins:
+      href: https://jenkins.local:8080/
+      description: CI/CD Automation Server
+      icon: si-jenkins
+      ping: jenkins.local
+
+- Seguridad y Acceso:
+  - Bitwarden:
+      href: https://bitwarden.local/
+      description: Password Manager
+      icon: si-bitwarden
+      ping: bitwarden.local
+
+  - Authelia:
+      href: https://auth.local/
+      description: Authentication & Authorization
+      icon: mdi-shield-account
+      ping: auth.local
+
+  - Nginx Proxy Manager:
+      href: https://npm.local:81/
+      description: Reverse Proxy Management
+      icon: si-nginx
+      ping: npm.local
+
+- Herramientas de IA:
+  - Ollama:
+      href: https://ollama.local:11434/
+      description: Local AI Model Server
+      icon: mdi-robot
+      ping: ollama.local
+
+  - Open WebUI:
+      href: https://webui.local:3000/
+      description: AI Chat Interface
+      icon: mdi-chat
+      ping: webui.local
+
+  - Stable Diffusion WebUI:
+      href: https://sd.local:7860/
+      description: AI Image Generation
+      icon: mdi-image-auto-adjust
+      ping: sd.local
+
+- Monitoreo y Logs:
+  - Uptime Kuma:
+      href: https://uptime.local:3001/
+      description: Self-hosted Monitoring Tool
+      icon: mdi-monitor-eye
+      ping: uptime.local
+      widget:
+        type: uptimekuma
+        url: https://uptime.local:3001
+        slug: homepage
+
+  - Netdata:
+      href: https://netdata.local:19999/
+      description: Real-time Performance Monitoring
+      icon: si-netdata
+      ping: netdata.local
+
+  - Graylog:
+      href: https://graylog.local:9000/
+      description: Log Management Platform
+      icon: mdi-file-document-multiple
+      ping: graylog.local

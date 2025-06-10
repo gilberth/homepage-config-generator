@@ -1,0 +1,42 @@
+# Demostración: Widgets No Configurados
+services:
+  - Testing Services:
+      - AdGuard Home:
+          href: http://adguard.demo:3000
+          description: DNS filtering service
+          icon: adguardhome.png
+          widget:
+            type: adguardhome
+            url: http://adguard.demo:3000
+            username: admin
+            password: admin
+
+      - Audiobookshelf:
+          href: http://audiobookshelf.demo:13378
+          description: Audiobook management
+          icon: audiobookshelf.png
+          widget:
+            type: audiobookshelf
+            url: http://audiobookshelf.demo:13378
+            key: audiobookshelf-api-key
+
+      - Calibre-Web:
+          href: http://calibre.demo:8083
+          description: E-book management
+          icon: calibreweb.png
+          widget:
+            type: calibreweb
+            url: http://calibre.demo:8083
+            username: admin
+            password: admin123
+
+widgets:
+  - datetime:
+      format: full
+      locale: es-ES
+
+bookmarks:
+  - Future Tools:
+      - New Service:
+          href: https://newservice.example.com
+          description: Future service integration

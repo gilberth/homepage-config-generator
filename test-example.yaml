@@ -1,0 +1,53 @@
+---
+- Development:
+    - GitHub:
+        href: https://github.com
+        description: Code repositories
+        icon: si-github
+        widget:
+          type: github
+          url: https://github.com
+          username: user
+          password: pass
+    - GitLab:
+        href: https://gitlab.com
+        description: Git hosting
+        icon: si-gitlab
+
+- Infrastructure:
+    - Proxmox:
+        href: https://proxmox.local:8006
+        description: Virtual Environment
+        icon: si-proxmox
+        widget:
+          type: proxmox
+          url: https://proxmox.local:8006
+          username: admin@pam!token
+          password: secret
+    - TrueNAS:
+        href: https://truenas.local
+        description: Storage Management
+        icon: simple-truenas
+        widget:
+          type: truenas
+          url: https://truenas.local
+
+- Media:
+    - Plex:
+        href: https://plex.example.com
+        description: Media Server
+        icon: si-plex
+        widget:
+          type: plex
+          url: https://plex.example.com
+          key: plex-token
+    - Transmission:
+        href: https://transmission.local:9091
+        description: BitTorrent Client
+        icon: si-transmission
+        widget:
+          type: transmission
+          url: https://transmission.local:9091
+          username: admin
+          password: secret
+          rpcUrl: /transmission/rpc
