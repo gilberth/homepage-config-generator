@@ -11,10 +11,10 @@ Una aplicación web moderna e intuitiva para configurar [gethomepage/homepage](h
 - **📥 Descarga automática** - Genera y descarga archivos YAML compatibles
 - **🔔 Sistema de notificaciones** - Feedback visual de todas las acciones
 - **📱 Diseño responsivo** - Funciona en desktop y móvil
-- **🎨 Selector de iconos avanzado** - Soporte para MDI, Simple Icons, URLs y emojis
+- **🎨 Selector de iconos avanzado** - Soporte para selfh.st/icons, Simple Icons, URLs y emojis
 - **🔍 Búsqueda de iconos** - Encuentra iconos fácilmente con búsqueda en tiempo real
 
-## ✨ Nuevo: Sistema de Iconos Avanzado
+## ✨ Sistema de Iconos Avanzado
 
 ### Tipos de Iconos Soportados
 
@@ -42,8 +42,6 @@ Una aplicación web moderna e intuitiva para configurar [gethomepage/homepage](h
 - `flat` - Plano sin efectos
 - `outline` - Solo contorno
 
-📖 **[Ver Guía Completa de Iconos](./ICON_GUIDE.md)**
-
 ## 🛠️ Tecnologías
 
 - **React 18** - Framework principal
@@ -65,7 +63,7 @@ Una aplicación web moderna e intuitiva para configurar [gethomepage/homepage](h
 
 ```bash
 # Clonar el repositorio
-git clone <repo-url>
+git clone https://github.com/gilberth/homepage-config-generator.git
 cd homepage-config-generator
 
 # Instalar dependencias
@@ -75,7 +73,7 @@ npm install
 npm start
 ```
 
-La aplicación estará disponible en `http://localhost:3000`
+La aplicación estará disponible en `http://localhost:3001`
 
 ## 🎮 Uso
 

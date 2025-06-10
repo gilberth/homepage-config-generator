@@ -14,7 +14,7 @@ const IconInput = styled.input`
   padding: 8px 40px 8px 12px;
   border: 1px solid ${props => props.theme?.colors?.border || '#dee2e6'};
   border-radius: 4px;
-  background: ${props => props.theme?.colors?.input || '#ffffff'};
+  background: ${props => props.theme?.colors?.surface || '#ffffff'};
   color: ${props => props.theme?.colors?.text || '#333333'};
   font-size: 14px;
   transition: all 0.2s ease;
@@ -22,7 +22,7 @@ const IconInput = styled.input`
   &:focus {
     outline: none;
     border-color: ${props => props.theme?.colors?.primary || '#007acc'};
-    box-shadow: 0 0 0 2px ${props => props.theme?.colors?.primaryAlpha || 'rgba(0, 122, 204, 0.2)'};
+    box-shadow: 0 0 0 2px rgba(79, 168, 218, 0.2);
   }
 
   &::placeholder {
@@ -81,10 +81,10 @@ const IconOption = styled.div`
   align-items: center;
   gap: 8px;
   transition: background 0.2s ease;
-  border-bottom: 1px solid ${props => props.theme?.colors?.border || '#dee2e6'};
+  border-bottom: 1px solid ${props => props.theme?.colors?.borderLight || '#e9ecef'};
 
   &:hover {
-    background: ${props => props.theme?.colors?.hover || '#f8f9fa'};
+    background: ${props => props.theme?.colors?.surfaceHover || '#f8f9fa'};
   }
 
   &:last-child {
@@ -99,35 +99,22 @@ const IconPreview = styled.span`
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  color: ${props => props.theme?.colors?.primary || '#007acc'};
+  background: ${props => props.theme?.colors?.background || '#f8f9fa'};
+  border-radius: 3px;
+  border: 1px solid ${props => props.theme?.colors?.border || '#dee2e6'};
 `;
 
-const IconLabel = styled.span`
+const IconName = styled.span`
   flex: 1;
   font-size: 14px;
   color: ${props => props.theme?.colors?.text || '#333333'};
 `;
 
-const IconCode = styled.span`
-  font-size: 12px;
-  color: ${props => props.theme?.colors?.textSecondary || '#6c757d'};
-  font-family: 'Courier New', monospace;
-`;
-
-const NoResults = styled.div`
-  padding: 16px 12px;
-  text-align: center;
-  color: ${props => props.theme?.colors?.textSecondary || '#6c757d'};
-  font-size: 14px;
-`;
-
 const HelperText = styled.div`
-  margin-top: 4px;
   font-size: 12px;
   color: ${props => props.theme?.colors?.textSecondary || '#6c757d'};
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  margin-top: 4px;
+  line-height: 1.4;
 `;
 
 const ExternalLink = styled.a`
@@ -142,7 +129,7 @@ const ExternalLink = styled.a`
   }
 `;
 
-// Extensas librerías de íconos organizadas por categorías
+// Biblioteca de iconos actualizada con selfh.st/icons
 const ICON_LIBRARIES = {
   'selfh.st/icons': {
     prefix: 'sh-',
@@ -195,39 +182,7 @@ const ICON_LIBRARIES = {
       
       // Backup y sincronización
       'proxmox-backup', 'urbackup', 'bacula', 'bareos', 'amanda', 'rdiff-backup',
-      'rsnapshot', 'timeshift', 'vorta', 'kopia', 'restic',
-      
-      // E-commerce y CMS
-      'wordpress', 'drupal', 'joomla', 'ghost', 'strapi', 'directus',
-      'prestashop', 'woocommerce', 'magento', 'opencart', 'bagisto',
-      
-      // Analytics y métricas
-      'matomo', 'plausible', 'umami', 'ackee', 'fathom', 'google-analytics',
-      'mixpanel', 'amplitude', 'hotjar', 'fullstory',
-      
-      // Herramientas de productividad
-      'notion', 'obsidian', 'logseq', 'trilium', 'tiddlywiki', 'bookstack',
-      'outline', 'siyuan', 'joplin', 'standard-notes', 'hedgedoc',
-      
-      // Gaming y entretenimiento
-      'steam', 'epic-games', 'gog', 'itch-io', 'lutris', 'heroic',
-      'minecraft', 'terraria', 'factorio', 'satisfactory',
-      
-      // Finanzas y contabilidad
-      'firefly-iii', 'actual', 'maybe', 'budget-zero', 'kresus',
-      'invoice-ninja', 'crater', 'akaunting', 'invoiceplane',
-      
-      // IoT y sensores
-      'mqtt', 'influxdb', 'telegraf', 'chronograf', 'kapacitor',
-      'thingsboard', 'devicehive', 'mainflux', 'arduino', 'raspberry-pi',
-      
-      // Servicios de desarrollo
-      'gitea', 'forgejo', 'sourcehut', 'fossil', 'mercurial',
-      'sonarqube', 'nexus', 'artifactory', 'harbor', 'registry',
-      
-      // Herramientas de sistema
-      'htop', 'btop', 'glances', 'netdata', 'collectd', 'munin',
-      'cacti', 'rrdtool', 'mrtg', 'pandora-fms'
+      'rsnapshot', 'timeshift', 'vorta', 'kopia', 'restic'
     ]
   },
   
@@ -240,73 +195,7 @@ const ICON_LIBRARIES = {
       
       // Servicios cloud
       'amazonaws', 'googlecloud', 'microsoftazure', 'digitalocean', 'heroku', 'vercel',
-      'netlify', 'cloudflare', 'firebase', 'supabase',
-      
-      // Bases de datos
-      'mysql', 'postgresql', 'mongodb', 'redis', 'elasticsearch', 'influxdb',
-      'prometheus', 'grafana', 'kibana',
-      
-      // Monitoreo y observabilidad
-      'datadog', 'newrelic', 'sentry', 'bugsnag', 'honeybadger', 'rollbar',
-      'uptime-robot', 'pingdom', 'statuspage',
-      
-      // Media y entretenimiento
-      'plex', 'jellyfin', 'emby', 'kodi', 'netflix', 'spotify', 'youtube',
-      'twitch', 'discord', 'slack', 'teamspeak', 'mumble',
-      
-      // Automatización y CI/CD
-      'jenkins', 'githubactions', 'gitlab', 'bitbucket', 'teamcity', 'bamboo',
-      'circleci', 'travisci', 'ansible', 'terraform',
-      
-      // Virtualización
-      'vmware', 'virtualbox', 'proxmox', 'citrix', 'hyperv',
-      
-      // Almacenamiento
-      'synology', 'qnap', 'freenas', 'truenas', 'nextcloud', 'owncloud',
-      'dropbox', 'googledrive', 'onedrive', 'box',
-      
-      // Comunicación y colaboración
-      'mattermost', 'rocketchat', 'matrix', 'signal', 'telegram', 'whatsapp',
-      'zoom', 'microsoftteams', 'googlehangouts', 'skype',
-      
-      // Home Assistant y IoT
-      'homeassistant', 'openhab', 'nodered', 'mosquitto', 'zigbee', 'zwave',
-      'philipshue', 'xiaomi', 'samsung', 'apple', 'google',
-      
-      // Redes
-      'ubiquiti', 'mikrotik', 'cisco', 'netgear', 'linksys', 'asus',
-      'pfsense', 'opnsense', 'unifi', 'edgerouter',
-      
-      // Seguridad
-      'bitwarden', 'lastpass', 'keepass', 'authy', 'nordvpn', 'expressvpn',
-      'wireguard', 'openvpn', 'tailscale', 'zerotier',
-      
-      // Desarrollo de juegos
-      'unity', 'unrealengine', 'godot', 'blender', 'steam', 'epicgames',
-      'nintendo', 'playstation', 'xbox', 'twitch',
-      
-      // Finanzas y criptomonedas
-      'bitcoin', 'ethereum', 'litecoin', 'dogecoin', 'monero', 'binance',
-      'coinbase', 'kraken', 'paypal', 'stripe',
-      
-      // E-commerce
-      'shopify', 'woocommerce', 'magento', 'prestashop', 'opencart',
-      'amazon', 'ebay', 'etsy', 'alibaba',
-      
-      // Redes sociales
-      'facebook', 'twitter', 'instagram', 'linkedin', 'reddit', 'pinterest',
-      'tiktok', 'snapchat', 'tumblr', 'flickr',
-      
-      // Productividad
-      'notion', 'obsidian', 'evernote', 'onenote', 'todoist', 'trello',
-      'asana', 'monday', 'airtable', 'zapier',
-      
-      // Herramientas de código
-      'visualstudiocode', 'intellijidea', 'sublime', 'atom', 'vim', 'emacs',
-      'github', 'gitlab', 'gitea', 'forgejo', 'sourcetree',
-      
-      // API y herramientas
-      'postman', 'insomnia', 'swagger', 'apidog', 'httpie', 'curl'
+      'netlify', 'cloudflare', 'firebase', 'supabase'
     ]
   }
 };
@@ -324,7 +213,7 @@ const IconSelector = ({ value, onChange, placeholder = "Search icons...", classN
     Object.entries(ICON_LIBRARIES).forEach(([category, { prefix, icons }]) => {
       const matchingIcons = icons.filter(icon => 
         icon.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (prefix + icon).toLowerCase().includes(searchTerm.toLowerCase())
+        `${prefix}${icon}`.toLowerCase().includes(searchTerm.toLowerCase())
       );
       
       if (matchingIcons.length > 0) {
@@ -335,113 +224,86 @@ const IconSelector = ({ value, onChange, placeholder = "Search icons...", classN
     return filtered;
   }, [searchTerm]);
 
-  const handleIconSelect = (icon, prefix) => {
-    const iconValue = prefix ? `${prefix}${icon}` : icon;
-    onChange(iconValue);
+  const handleIconSelect = (category, icon) => {
+    const library = ICON_LIBRARIES[category];
+    const fullIconName = `${library.prefix}${icon}`;
+    onChange(fullIconName);
     setIsOpen(false);
     setSearchTerm('');
   };
 
-  const handleInputClick = () => {
-    setIsOpen(!isOpen);
+  const clearSelection = () => {
+    onChange('');
+    setSearchTerm('');
   };
-
-  const handleInputChange = (e) => {
-    const inputValue = e.target.value;
-    setSearchTerm(inputValue);
-    onChange(inputValue);
-    if (!isOpen) setIsOpen(true);
-  };
-
-  const getIconPreview = (icon, prefix) => {
-    const fullIcon = prefix ? `${prefix}${icon}` : icon;
-    
-    // Si es una URL, mostrar un indicador de imagen
-    if (fullIcon.startsWith('http')) {
-      return '🖼️';
-    }
-    
-    // Si es un emoji, mostrarlo directamente
-    if (/[\u{1F300}-\u{1F9FF}]/u.test(fullIcon)) {
-      return fullIcon;
-    }
-    
-    // Para selfh.st/icons y Simple Icons, mostrar un indicador genérico
-    if (fullIcon.startsWith('mdi-')) {
-      return '🎨';
-    }
-    
-    if (fullIcon.startsWith('si-')) {
-      return '🏢';
-    }
-    
-    return '📷';
-  };
-
-  const totalIcons = Object.values(filteredIcons).reduce((total, { icons }) => total + icons.length, 0);
 
   return (
-    <div className={className}>
-      <SelectorContainer>
-        <IconInput
-          theme={theme}
-          type="text"
-          value={value}
-          onChange={handleInputChange}
-          onClick={handleInputClick}
-          placeholder={placeholder}
-          autoComplete="off"
-        />
-        <SearchButton 
-          theme={theme} 
-          type="button" 
-          onClick={handleInputClick}
-        >
-          <FiSearch />
-        </SearchButton>
-        
-        {isOpen && (
-          <DropdownContainer theme={theme}>
-            {totalIcons === 0 ? (
-              <NoResults theme={theme}>
-                No se encontraron íconos para "{searchTerm}"
-              </NoResults>
-            ) : (
-              Object.entries(filteredIcons).map(([category, { prefix, icons }]) => (
-                <div key={category}>
-                  <CategoryHeader theme={theme}>
-                    {category} ({icons.length} íconos)
-                  </CategoryHeader>
-                  {icons.slice(0, 50).map((icon) => (
-                    <IconOption
-                      key={`${prefix}${icon}`}
-                      theme={theme}
-                      onClick={() => handleIconSelect(icon, prefix)}
-                    >
-                      <IconPreview theme={theme}>
-                        {getIconPreview(icon, prefix)}
-                      </IconPreview>
-                      <IconLabel theme={theme}>
-                        {icon}
-                      </IconLabel>
-                      <IconCode theme={theme}>
-                        {prefix}{icon}
-                      </IconCode>
-                    </IconOption>
-                  ))}
-                  {icons.length > 50 && (
-                    <IconOption theme={theme}>
-                      <IconLabel theme={theme} style={{ fontStyle: 'italic' }}>
-                        ... y {icons.length - 50} íconos más
-                      </IconLabel>
-                    </IconOption>
-                  )}
-                </div>
-              ))
-            )}
-          </DropdownContainer>
-        )}
-      </SelectorContainer>
+    <SelectorContainer className={className}>
+      <IconInput
+        type="text"
+        value={value || searchTerm}
+        onChange={(e) => {
+          if (!value) {
+            setSearchTerm(e.target.value);
+          } else {
+            onChange(e.target.value);
+          }
+        }}
+        onFocus={() => setIsOpen(true)}
+        onBlur={() => setTimeout(() => setIsOpen(false), 200)}
+        placeholder={placeholder}
+        theme={theme}
+      />
+      
+      <SearchButton
+        type="button"
+        onClick={value ? clearSelection : () => setIsOpen(!isOpen)}
+        theme={theme}
+      >
+        {value ? <FiX size={16} /> : <FiSearch size={16} />}
+      </SearchButton>
+
+      {isOpen && (
+        <DropdownContainer theme={theme}>
+          {Object.entries(filteredIcons).map(([category, { prefix, icons }]) => (
+            <div key={category}>
+              <CategoryHeader theme={theme}>
+                {category} ({prefix})
+              </CategoryHeader>
+              {icons.slice(0, 10).map((icon) => (
+                <IconOption
+                  key={icon}
+                  onClick={() => handleIconSelect(category, icon)}
+                  theme={theme}
+                >
+                  <IconPreview theme={theme}>
+                    {/* Para selfh.st/icons y Simple Icons, mostrar un indicador genérico */}
+                    🎯
+                  </IconPreview>
+                  <IconName theme={theme}>
+                    {prefix}{icon}
+                  </IconName>
+                </IconOption>
+              ))}
+              {icons.length > 10 && (
+                <IconOption theme={theme}>
+                  <IconName theme={theme}>
+                    ... y {icons.length - 10} más
+                  </IconName>
+                </IconOption>
+              )}
+            </div>
+          ))}
+          
+          {Object.keys(filteredIcons).length === 0 && (
+            <IconOption theme={theme}>
+              <IconName theme={theme}>
+                No se encontraron iconos. Prueba con: sh-plex, sh-docker, si-github
+              </IconName>
+            </IconOption>
+          )}
+        </DropdownContainer>
+      )}
       
       <HelperText theme={theme}>
         Soporta íconos de selfh.st/icons (sh-), Simple Icons (si-), URLs, y emojis •{' '}
@@ -456,14 +318,14 @@ const IconSelector = ({ value, onChange, placeholder = "Search icons...", classN
         •{' '}
         <ExternalLink 
           href="https://simpleicons.org/" 
-          target="_blank" 
+          target="_blank"
           rel="noopener noreferrer"
           theme={theme}
         >
           Simple Icons <FiExternalLink size={10} />
         </ExternalLink>
       </HelperText>
-    </div>
+    </SelectorContainer>
   );
 };
 
